@@ -1,0 +1,13 @@
+{
+  "name": "exam-stone",
+  "version": "0.5.0",
+  "description": "A very powerful stone which is made for online exams",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --mode development --watch",
+    "build": "webpack --mode production"
+  },
+  "author": "Piyush",
+  "license": "MIT",
+  "dependencies": {}
+}

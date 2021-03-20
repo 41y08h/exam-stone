@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "name": "Exam Stone",
+    "version": "0.5.0",
+    "description": "A very powerful stone which is made for online exams",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://onlineexammica.in/Exam/CandidateExam",
+                "file:///C:/Users/Piyush/Downloads/CandidateExam.htm"
+            ],
+            "js": [
+                "main.bundle.js"
+            ]
+        }
+    ]
+}
