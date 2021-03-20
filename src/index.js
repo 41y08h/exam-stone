@@ -70,7 +70,7 @@ async function searchOnGoogle() {
     try {
 
         // Call OCR API to get text in the image
-        const response = await content.fetch(api_url);
+        const response = await httpRequest(api_url);
         const data = await response.json();
 
         logStatus('Idle')
@@ -81,6 +81,7 @@ async function searchOnGoogle() {
         window.open(google_url)
     } catch (error) {
         logStatus(':( Error')
+        if (process.env.NODE_ENV !== 'production') console.trace(error)
     }
 }
 
@@ -95,4 +96,9 @@ function applyStyles(element, styles) {
 function logStatus(status) {
     statusList.appendChild(StatusText({ text: status }))
     statusList.lastElementChild.scrollIntoView({ behavior: 'smooth' })
+}
+
+function httpRequest(...payload) {
+    if (typeof content === 'undefined') return fetch(...payload)
+    content.fetch(...payload)
 }
