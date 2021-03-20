@@ -100,5 +100,5 @@ function logStatus(status) {
 
 function httpRequest(...payload) {
     if (typeof content === 'undefined') return fetch(...payload)
-    content.fetch(...payload)
+    else return content.fetch(...payload)
 }
